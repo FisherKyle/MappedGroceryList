@@ -6,9 +6,13 @@ $(document).ready(function() {
       var newWords = $("#" + groceryItem).val();
       return newWords;
     });
-    
-    organizedList.sort().forEach(function(item) {
-      $("#sorted-list").append("<li>" + item + "</li>");
-    });
+    var sortDisplay = function() {
+      $("form#sorter").hide();
+      $("sorted-list").html("");
+      organizedList.sort().forEach(function(item) {
+        $("#sorted-list").append("<li>" + item + "</li>");
+      });
+    }
+    sortDisplay();
   });
 });
