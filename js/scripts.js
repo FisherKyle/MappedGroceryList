@@ -6,6 +6,9 @@ $(document).ready(function() {
       var newWords = $("#" + groceryItem).val();
       return newWords;
     });
-    console.log(organizedList.sort());
+    
+    organizedList.sort().forEach(function(item) {
+      $("#sorted-list").append("<li>" + item + "</li>");
+    });
   });
 });
